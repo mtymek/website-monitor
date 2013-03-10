@@ -2,10 +2,10 @@
 
 namespace WebsiteMonitor\Probe\Http;
 
-use WebsiteMonitor\Probe\ProbeInterface;
+use WebsiteMonitor\Probe\AbstractProbe;
 use Zend\Http\Client as HttpClient;
 
-abstract class Http implements ProbeInterface
+abstract class Http extends AbstractProbe
 {
 
     /**
