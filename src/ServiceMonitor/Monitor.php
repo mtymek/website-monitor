@@ -18,6 +18,7 @@ class Monitor
 
     public function monitor()
     {
+        // run probes
         $errors = array();
         foreach ($this->probes as $probe) {
             try {
@@ -26,6 +27,11 @@ class Monitor
                 $errors[] = $e->getMessage();
             }
         }
+
+        // log status
+        // ...
+
+        // notify
         if (count($errors)) {
             $notifier = new Notifier\DBus();
             $notifier->notify($errors);
