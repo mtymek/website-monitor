@@ -7,6 +7,6 @@ namespace ServiceMonitor\Exception\ProbeFailed;
  *
  * @package ServiceMonitor\Exception\ProbeFailed
  */
-class InvalidHttpResponseCodeException extends ProbeFailedException
+class UnableToConnectException extends ProbeFailedException
 {
 }

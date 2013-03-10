@@ -3,6 +3,8 @@
 namespace ServiceMonitor\Probe\Http;
 
 use ServiceMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException;
+use ServiceMonitor\Exception\ProbeFailed\UnableToConnectException;
+use Exception;
 
 class Simple extends Http
 {
@@ -27,9 +29,15 @@ class Simple extends Http
 
     public function probe()
     {
-        $response = $this->getHttpClient()->send();
-        if ($response->getStatusCode() !== 200) {
-            throw new InvalidHttpResponseCodeException();
+        $uri = $this->getUri();
+        try {
+            $response = $this->getHttpClient()->send();
+        } catch (Exception $e) {
+            throw new UnableToConnectException("Unable to connect to '$uri': " . $e->getMessage());
+        }
+        $code = $response->getStatusCode();
+        if ($code !== 200) {
+            throw new InvalidHttpResponseCodeException("Invalid response code ($code) when probing '$uri'.");
         }
     }
 }
