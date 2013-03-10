@@ -3,35 +3,33 @@
 namespace WebsiteMonitor;
 
 use WebsiteMonitor\Exception\ProbeFailed\ProbeFailedException;
+use WebsiteMonitor\Website\Website;
 
 class Monitor
 {
-    /**
-     * @var Probe\ProbeInterface[]
-     */
-    protected $probes = array();
 
-    public function addProbe(Probe\ProbeInterface $probe)
+    /**
+     * @var Website[]
+     */
+    protected $websites;
+
+    /**
+     * @param Website $website
+     */
+    public function addWebsite(Website $website)
     {
-        $this->probes[] = $probe;
+        $this->websites[] = $website;
     }
 
     public function monitor()
     {
-        // run probes
         $errors = array();
-        foreach ($this->probes as $probe) {
-            try {
-                $probe->probe();
-            } catch (ProbeFailedException $e) {
-                $errors[] = $e->getMessage();
-            }
+
+        foreach ($this->websites as $website) {
+            $website->monitor();
+            $errors = $errors + $website->getErrors();
         }
 
-        // log status
-        // ...
-
-        // notify
         if (count($errors)) {
             $notifier = new Notifier\DBus();
             $notifier->notify($errors);
