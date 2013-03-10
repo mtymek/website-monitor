@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceMonitorTest\Probe\Http;
+namespace WebsiteMonitorTest\Probe\Http;
 
 use PHPUnit_Framework_TestCase;
 use Zend\Http\Client as HttpClient;

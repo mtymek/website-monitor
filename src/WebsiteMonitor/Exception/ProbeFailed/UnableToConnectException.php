@@ -1,11 +1,11 @@
 <?php
 
-namespace ServiceMonitor\Exception\ProbeFailed;
+namespace WebsiteMonitor\Exception\ProbeFailed;
 
 /**
  * Class InvalidHttpResponseCodeException
  *
- * @package ServiceMonitor\Exception\ProbeFailed
+ * @package WebsiteMonitor\Exception\ProbeFailed
  */
 class UnableToConnectException extends ProbeFailedException
 {

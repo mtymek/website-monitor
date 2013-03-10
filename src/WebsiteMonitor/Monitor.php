@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceMonitor;
+namespace WebsiteMonitor;
 
-use ServiceMonitor\Exception\ProbeFailed\ProbeFailedException;
+use WebsiteMonitor\Exception\ProbeFailed\ProbeFailedException;
 
 class Monitor
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceMonitor\Exception\ProbeFailed;
+namespace WebsiteMonitor\Exception\ProbeFailed;
 
-use ServiceMonitor\Exception\ExceptionInterface;
+use WebsiteMonitor\Exception\ExceptionInterface;
 use Exception;
 
 

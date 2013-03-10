@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceMonitor\Exception;
+namespace WebsiteMonitor\Exception;
 
 interface ExceptionInterface
 {

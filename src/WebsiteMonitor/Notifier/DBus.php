@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceMonitor\Notifier;
+namespace WebsiteMonitor\Notifier;
 
 class DBus implements NotifierInterface
 {
@@ -9,6 +9,6 @@ class DBus implements NotifierInterface
         if (is_array($message)) {
             $message = implode('\n', $message);
         }
-        exec("notify-send ServiceMonitor '$message'");
+        exec("notify-send WebsiteMonitor '$message'");
     }
 }

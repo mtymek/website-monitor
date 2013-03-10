@@ -1,8 +1,8 @@
 <?php
 
-namespace ServiceMonitor\Probe\Http;
+namespace WebsiteMonitor\Probe\Http;
 
-use ServiceMonitor\Probe\ProbeInterface;
+use WebsiteMonitor\Probe\ProbeInterface;
 use Zend\Http\Client as HttpClient;
 
 abstract class Http implements ProbeInterface

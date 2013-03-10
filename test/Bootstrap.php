@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceMonitorTest;
+namespace WebsiteMonitorTest;
 
 error_reporting(E_ALL | E_STRICT);
 chdir(__DIR__);

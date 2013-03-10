@@ -1,9 +1,9 @@
 <?php
 
-namespace ServiceMonitor\Probe\Http;
+namespace WebsiteMonitor\Probe\Http;
 
-use ServiceMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException;
-use ServiceMonitor\Exception\ProbeFailed\UnableToConnectException;
+use WebsiteMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException;
+use WebsiteMonitor\Exception\ProbeFailed\UnableToConnectException;
 use Exception;
 
 class Simple extends Http

@@ -7,9 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace ServiceMonitorTest\Probe\Http;
+namespace WebsiteMonitorTest\Probe\Http;
 
-use ServiceMonitor\Probe\Http\Http as AbstractHttpProbe;
+use WebsiteMonitor\Probe\Http\Http as AbstractHttpProbe;
 
 class Probe extends AbstractHttpProbe
 {

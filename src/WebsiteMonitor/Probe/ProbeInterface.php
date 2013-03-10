@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceMonitor\Probe;
+namespace WebsiteMonitor\Probe;
 
 interface ProbeInterface
 {

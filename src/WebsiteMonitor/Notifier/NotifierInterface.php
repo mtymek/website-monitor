@@ -1,6 +1,6 @@
 <?php
 
-namespace ServiceMonitor\Notifier;
+namespace WebsiteMonitor\Notifier;
 
 interface NotifierInterface
 {

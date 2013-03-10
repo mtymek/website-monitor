@@ -1,12 +1,12 @@
 <?php
 
-namespace ServiceMonitorTest\Probe\Http;
+namespace WebsiteMonitorTest\Probe\Http;
 
 use PHPUnit_Framework_TestCase;
 use Zend\Http\Client as HttpClient;
 use Zend\Http\Response;
 
-use ServiceMonitor\Probe\Http\Simple;
+use WebsiteMonitor\Probe\Http\Simple;
 
 class SimpleTest extends PHPUnit_Framework_TestCase
 {
@@ -58,7 +58,7 @@ class SimpleTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \ServiceMonitor\Exception\ProbeFailed\UnableToConnectException
+     * @expectedException \WebsiteMonitor\Exception\ProbeFailed\UnableToConnectException
      */
     public function testProbeThrowsExceptionWhenClientCantConnect()
     {
@@ -69,7 +69,7 @@ class SimpleTest extends PHPUnit_Framework_TestCase
         $this->probe->probe();
     }
     /**
-     * @expectedException \ServiceMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException
+     * @expectedException \WebsiteMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException
      */
     public function testProbeThrowsExceptionWhenResponseCodeIsNot200()
     {
