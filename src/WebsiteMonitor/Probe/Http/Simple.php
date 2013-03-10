@@ -8,6 +8,7 @@ use Exception;
 
 class Simple extends Http
 {
+    protected $name = "HTTP Status Probe";
 
     public function __construct($uri = null)
     {

@@ -79,4 +79,9 @@ class Website
         return $this->name;
     }
 
+    public function getProbes()
+    {
+        return $this->probes;
+    }
+
 }

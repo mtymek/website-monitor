@@ -16,12 +16,6 @@ class AbstractProbeTest extends PHPUnit_Framework_TestCase
         $this->probe = new Probe();
     }
 
-    public function testProbeNameCanBeInjectedUsingConstructor()
-    {
-        $probe = new Probe("some_name");
-        $this->assertEquals("some_name", $probe->getName());
-    }
-
     public function testProbeNameCanBeSet()
     {
         $this->probe->setName('foobar');
