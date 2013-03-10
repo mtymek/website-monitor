@@ -1,0 +1,19 @@
+{
+    "name": "mtymek/service-monitor",
+    "authors": [
+        {
+            "name": "Mateusz Tymek",
+            "email": "mtymek@gmail.com"
+        }
+    ],
+    "require": {
+        "zendframework/zend-http": "2.1.*",
+        "phpunit/phpunit": "3.7.18"
+    },
+    "autoload": {
+        "psr-0": {
+            "ServiceMonitor": "src",
+            "ServiceMonitorTest": "test"
+        }
+    }
+}
