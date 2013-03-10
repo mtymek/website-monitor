@@ -11,7 +11,7 @@ use ServiceMonitor\Probe\Http\Simple;
 class SimpleTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var Probe
+     * @var Simple
      */
     protected $probe;
 
@@ -58,7 +58,18 @@ class SimpleTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException ServiceMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException
+     * @expectedException \ServiceMonitor\Exception\ProbeFailed\UnableToConnectException
+     */
+    public function testProbeThrowsExceptionWhenClientCantConnect()
+    {
+        $client = $this->getMock('Zend\Http\Client', array('send'));
+        $client->expects($this->once())->method('send')
+            ->will($this->throwException(new \Exception()));
+        $this->probe->setHttpClient($client);
+        $this->probe->probe();
+    }
+    /**
+     * @expectedException \ServiceMonitor\Exception\ProbeFailed\InvalidHttpResponseCodeException
      */
     public function testProbeThrowsExceptionWhenResponseCodeIsNot200()
     {
